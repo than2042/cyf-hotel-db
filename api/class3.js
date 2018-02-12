@@ -10,6 +10,14 @@ const router = express.Router();
 // TODO: add code here
 
 
+// get `/rooms-and-types`
+// TODO: add code here
+
+
+// get '/reservation-for-invoice/:invoice_id'
+// TODO: add code here
+
+
 router.delete('/reservations/:id/', function(req, res) {
   const id = req.params.id;
   const sql = 'delete from reservations where id = ' + id;
@@ -24,6 +32,15 @@ router.delete('/reservations/:id/', function(req, res) {
 
 // get `/reservations-per-room`
 // TODO: add code here
+
+
+// get '/count-rooms-by-type'
+// TODO: add code here
+
+
+// get '/reservations-for-customer/:minimum_reservations'
+// TODO: add code here
+
 
 // HOMEWORK
 // get `/stats-price-room/:room_id`
