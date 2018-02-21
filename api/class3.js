@@ -13,7 +13,7 @@ router.delete('/reservations/:id/', function(req, res) {
   const id = req.params.id;
   const sql = 'delete from reservations where id = ' + id;
 
-  db.run(sql, [id], (err, rows) => {
+  db.run(sql, (err, rows) => {
     res.status(200).json({
       customers: rows
     });
