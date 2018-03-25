@@ -8,7 +8,6 @@ The tasks build on your previous experience using SQL with SQLite and Node.js. T
 
 * `index.js` - sets up the application for use
 * `server/class2.js` - router for simple application logic and interaction with the database;
-* `server/class3.js` - routes for advanced application logic and interaction with the database;
 
 In order to interact with the server we will be using [Postman](https://www.getpostman.com/) to perform the HTTP requests.
 
