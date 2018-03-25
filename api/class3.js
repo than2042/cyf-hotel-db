@@ -1,7 +1,7 @@
 const express = require('express');
 const sqlite3 = require( 'sqlite3' ).verbose();
 
-const filename = './database/database.sqlite';
+const filename = 'database/database.sqlite';
 let db = new sqlite3.Database(filename);
 
 const router = express.Router();
@@ -23,7 +23,6 @@ router.delete('/reservations/:id/', function(req, res) {
 // get `/reservations-per-customer/`
 // TODO: add code here
 
-
 // HOMEWORK
 // get '/reservations/details-between/:from_day/:to_day'
 // TODO: add for code here
@@ -39,6 +38,5 @@ router.delete('/reservations/:id/', function(req, res) {
 // HOMEWORK
 // get `/rooms/available-in/:from_day/:to_day`
 // TODO: add code here
-
 
 module.exports = router;
