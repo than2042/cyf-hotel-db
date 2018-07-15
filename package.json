@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "generate-data": "node assets/data/generate.js"
+    "start": "nodemon --watch database/schema.sql index.js",
+    "generate-data": "node assets/data/generate.js",
+    "db-reset": "node db-reset.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +16,7 @@
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.11",
     "knex": "0.13.0",
-    "sqlite3": "^4.0.0"
+    "sqlite3": "^4.0.1"
   },
   "devDependencies": {
     "faker": "^4.1.0",
