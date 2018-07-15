@@ -1,5 +1,8 @@
 const SERVER_PORT = process.env.PORT || 8080;
 
+const resetDataBase = require('./utils/db-tools');
+resetDataBase();
+
 const express = require("express");
 const exphbs = require("express-handlebars");
 const bodyparser = require("body-parser");
@@ -8,6 +11,7 @@ const apiRouter = require("./api");
 
 const app = express();
 const router = express.Router();
+
 
 app.engine(
   "hbs",
