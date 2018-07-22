@@ -3,7 +3,9 @@ const filename = 'database/database.sqlite';
 const sqlite3 = require('sqlite3').verbose();
 
 function resetDataBase() {
-  fs.unlinkSync(filename);
+  if (fs.existsSync(filename)) {
+    fs.unlinkSync(filename);    
+  }
 
   let db = new sqlite3.Database(filename);
 
