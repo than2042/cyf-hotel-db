@@ -6,7 +6,7 @@ const sqlite3 = require('sqlite3').verbose();
 let db = new sqlite3.Database(filename);
 // db.run("PRAGMA foreign_keys = ON");
 
-router.get('/customersx', function(req, res) {
+router.get('/customers', function(req, res) {
   var sql = 'select from customers';
 
   db.all(sql, [], (err, rows) => {
