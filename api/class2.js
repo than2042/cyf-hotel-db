@@ -8,7 +8,7 @@ let db = new sqlite3.Database(filename);
 // db.run("PRAGMA foreign_keys = ON");
 
 router.get('/customers', function(req, res) {
-  var sql = 'select from customers';
+  var sql = 'select * from customers';
 
   db.all(sql, [], (err, rows) => {
     if (err) {
