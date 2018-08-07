@@ -6,14 +6,24 @@ const sqlite3 = require('sqlite3').verbose();
 let db = new sqlite3.Database(filename);
 // db.run("PRAGMA foreign_keys = ON");
 
-router.get('/customers', function(req, res) {
-  var sql = 'select * from customers';
+router.get('/customersx', function(req, res) {
+  var sql = 'select from customers';
 
-  db.all(sql, [], (err, rows ) => {
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+        console.log('ERROR fetching from the database:', err);
+        return;
+    }
+    console.log('Request succeeded, new data fetched', rows);
     res.status(200).json({
       customers: rows
     });
   });
+});
+
+
+router.get('/customers/:id', function(req, res) {
+  // TODO: add code here
 });
 
 
