@@ -9,9 +9,9 @@ const router = express.Router();
 // get '/reservations-and-invoices/'
 // TODO: add code here
 
-router.delete('/reservations/:id/', function(req, res) {
+router.delete('/reservations/:id', function(req, res) {
   const id = req.params.id;
-  const sql = 'delete from reservations where id = ' + id;
+  const sql = `delete from reservations where id = ${id}`;
 
   db.run(sql, (err, rows) => {
     if (err) {
@@ -19,7 +19,7 @@ router.delete('/reservations/:id/', function(req, res) {
       return;
     }
 
-    console.log('Successfully removed reservation :' + id);
+    console.log(`Successfully removed reservation: ${id}`);
     res.status(200).json({
       message: "Successfully removed reservation " + id
     });
