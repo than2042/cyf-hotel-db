@@ -14,8 +14,14 @@ router.delete('/reservations/:id/', function(req, res) {
   const sql = 'delete from reservations where id = ' + id;
 
   db.run(sql, (err, rows) => {
+    if (err) {
+      console.log('ERROR fetching from the database:', err);
+      return;
+    }
+
+    console.log('Successfully removed reservation :' + id);
     res.status(200).json({
-      customers: rows
+      message: "Successfully removed reservation " + id
     });
   });
 });
